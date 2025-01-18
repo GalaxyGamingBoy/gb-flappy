@@ -1,6 +1,6 @@
 INCLUDE "hardware.inc"
 
-SECTION "VBlank Vars", ROM0
+SECTION "VBlank Vars", WRAM0
 wVBlankCount:: db
 
 SECTION "VBlank", ROM0

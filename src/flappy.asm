@@ -1,4 +1,5 @@
 INCLUDE "hardware.inc"
+INCLUDE "src/utils/constants.inc"
 
 SECTION "Flappy Vars", WRAM0
 wGameState:: db
@@ -27,7 +28,7 @@ EntryPoint:
     ld [rBGP], a
     ld [rOBP0], a
 
-; Changes the game statess
+; Changes the game states
 ; @r8 a - trashed
 NextGameState::
     call WaitForOneVBlank
@@ -42,6 +43,18 @@ NextGameState::
 
     call DisableInterrupts
     call ClearAllSprites
+
+    ; Switch State
+
+    ld a, [wGameState]
+    
+    cp GAME_STATE
+    jp z, InitGameState
+
+    cp GAMEOVER_STATE
+    jp z, InitGameoverState
+
+    jp InitTitleState
 
 Loop:
     jp Loop

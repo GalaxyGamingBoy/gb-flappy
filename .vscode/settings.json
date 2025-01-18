@@ -1,3 +1,4 @@
 {
-  "rgbdsz80.includePath": ["."]
+  "rgbdsz80.includePath": ["."],
+  "cortex-debug.variableUseNaturalFormat": false
 }
