@@ -53,6 +53,6 @@ LoopGameState:
     jp LoopGameState
 
 ToGameoverGameState::
-    ld a, GAMEOVER_STATE
+    ld a, 0
     ld [wGameState], a
     jp NextGameState

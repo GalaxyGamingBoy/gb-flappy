@@ -45,14 +45,10 @@ NextGameState::
     call ClearAllSprites
 
     ; Switch State
-
     ld a, [wGameState]
     
     cp GAME_STATE
     jp z, InitGameState
-
-    cp GAMEOVER_STATE
-    jp z, InitGameoverState
 
     jp InitTitleState
 
